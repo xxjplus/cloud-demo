@@ -1,0 +1,9 @@
+## 以下是可生效的
+feign:
+  client:
+    config:
+      default:  # 默认的
+        read-timeout: 2000
+        connect-timeout: 2000
+        retryer: feign.Retryer.Default
+        logger-level: FULL

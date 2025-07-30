@@ -1,0 +1,42 @@
+# 以下配置无用-------
+#spring:
+#  cloud:
+#    openfeign:
+#      client:
+#        config:
+#          default:  # 全局配置（或指定客户端名称）
+#            logger-level: FULL  # 注意：属性名改为 logger-level:
+#            request-interceptors:
+#              - com.xjplus.intercepter.XTokenRequestInterceptor
+#    feign:
+#      client:
+#        configuration:
+#          default:
+#            loggerLevel: FULL
+#            logger-level: FULL
+# 以上配置无用-------
+
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug  # 框架日志
+    com.xjplus.feign: debug  # Feign 接口所在包
+
+## 以下是可生效的
+feign:
+  client:
+    config:
+      product-service:  # 指定客户端名称
+        read-timeout: 5000
+        connect-timeout: 5000
+        retryer: feign.Retryer.Default
+        logger-level: FULL
+        request-interceptors:
+          - com.xjplus.intercepter.XTokenRequestInterceptor
+  sentinel:
+    enabled: true
+## 以下配置开启sentinel也可以
+#spring:
+#  cloud:
+#    sentinel:
+#      enabled: true # 开启sentinel
+

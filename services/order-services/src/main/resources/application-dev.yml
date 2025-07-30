@@ -1,0 +1,17 @@
+spring:
+  config:
+    import:
+      - nacos:common.properties?group=${spring.application.name}
+      - nacos:base.properties?group=${spring.application.name}
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+        namespace: 58a80291-2f13-4e55-ac6d-2fb3f2577dea
+      config:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+        namespace: 58a80291-2f13-4e55-ac6d-2fb3f2577dea
