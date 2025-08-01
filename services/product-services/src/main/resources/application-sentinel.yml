@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    sentinel:
+      eager: true # 启动时立即加载所有规则
+      transport:
+        dashboard: localhost:8858
+#      datasource:
+#        nacos:

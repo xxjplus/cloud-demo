@@ -1,5 +1,6 @@
 package com.xjplus.service;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.xjplus.bean.Order;
 import com.xjplus.bean.Product;
 import com.xjplus.feign.ProductFeignClient;
@@ -37,6 +38,7 @@ public class OrderService {
 
 
     // 创建订单
+    @SentinelResource(value = "createOrder")
     public Order createOrder(Long orderId, Long productId) {
 
         Order order = new Order();

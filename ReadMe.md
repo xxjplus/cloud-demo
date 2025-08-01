@@ -183,5 +183,11 @@ feign:
 ##### Sentinel 服务限流
     1. 引入依赖
     2. 配置文件中配置 sentinel 相关信息
+
+    ###### docker本地 启动 Sentinel Dashboard
+```shell
+docker pull bladex/sentinel-dashboard:latest
+
+```
     
 
